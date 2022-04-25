@@ -5,16 +5,23 @@ import {
   Route,
 } from "react-router-dom";
 import Login from './components/screens/auth/Login';
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+  color: #363732;
+  background-color: #DCE1E9;
+  height: 100%;
+`;
 
 function App() {
   return (
-    <div>
+    <AppContainer>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
       </BrowserRouter>
-    </div>
+    </AppContainer>
   );
 }
 
