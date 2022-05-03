@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { device } from '../../shared/media-devices/devices';
 
 const Container = styled.div`
     display: flex;
@@ -7,7 +8,12 @@ const Container = styled.div`
     flex-wrap: no-wrap;
     align-items: start;    
     justify-content: center;
-    margin-left:5%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    @media ${device.mobileL}{
+        align-items: center;    
+    }
 `;
 
 const Welcome = styled.div`
@@ -27,8 +33,6 @@ const Input = styled.input.attrs(props => ({
     border-width: 0 0 2px;
     border-color: #0F8DA9;
     background-color: transparent;
-    width: 50%;
-    min-width: 250px;
     font-size: 16px;
     color: #173A8C;
     :focus {
@@ -37,6 +41,11 @@ const Input = styled.input.attrs(props => ({
     ::placeholder {
         color: #84A3E8;
         padding-left: 5px;
+    }
+    width: 100%;
+    @media ${device.mobileL}{
+        min-width: 250px;
+        width: 50%;
     }
 `;
 
@@ -59,6 +68,11 @@ const Password = styled.input.attrs({
         color: #84A3E8;
         padding-left: 5px;
     }
+    width: 100%;
+    @media ${device.mobileL}{
+        min-width: 250px;
+        width: 50%;
+    }
 `;
 
 const Button = styled.button`
@@ -70,7 +84,6 @@ const Button = styled.button`
 const Login = () => {
     return (
         <Container>
-            
             <Welcome>Welcome!</Welcome>
             <br />
             <Label> Please log in to continue </Label>
