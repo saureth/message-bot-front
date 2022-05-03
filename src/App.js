@@ -8,8 +8,8 @@ import Login from './components/screens/auth/Login';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
-  color: #363732;
-  background-color: #DCE1E9;
+  color: #2155CD;
+  background-color: #E8F9FD;
   height: 100%;
 `;
 
