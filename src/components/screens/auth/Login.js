@@ -76,9 +76,19 @@ const Password = styled.input.attrs({
 `;
 
 const Button = styled.button`
-  padding: 10px 15px;
-  background-color: #66C3FF;
-  border-radius: 20%;
+    width: 50%;
+    border-radius: 25px;
+    align-self: center;
+    margin-top: 2%;
+    background-color: #7CDEF4;
+    color: #E8F9FD;
+    border-color: #0F8DA9;
+    min-width: 250px;
+    min-height: 35px;
+    @media ${device.mobileL}{
+        width: 25%;
+        font-size: 20px;
+    }
 `;
 
 const Login = () => {
@@ -94,7 +104,7 @@ const Login = () => {
             <Label> Password </Label>
             <Password />
             <br />
-            <Button > Enviar </Button>
+            <Button > SIGN IN </Button>
         </Container>
     );
 }
