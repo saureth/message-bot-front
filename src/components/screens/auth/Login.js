@@ -53,6 +53,7 @@ const Login = () => {
                 <Label> Please log in to continue </Label>
                 <EmailInput name='email' label= "Email" />
                 <PasswordInput name='password' label= "Password"/>
+                <br />
                 <PrimaryButton type='submit'> SIGN IN </PrimaryButton>
             </Container>
         </Form>
