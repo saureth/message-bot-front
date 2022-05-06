@@ -7,6 +7,7 @@ import EmailInput from '../../shared/shared-comps/EmailInput';
 import Label from '../../shared/shared-comps/Label';
 import  * as Yup from 'yup';
 import PasswordInput from '../../shared/shared-comps/PasswordInput';
+import PrimaryButton from '../../shared/shared-comps/PrimaryButton';
 
 const Container = styled.div`
     display: flex;
@@ -30,22 +31,7 @@ const Welcome = styled.div`
     }
 `;
 
-const Button = styled.button`
-    width: 50%;
-    border-radius: 25px;
-    align-self: center;
-    margin: 5% 0%;
-    background-color: #7CDEF4;
-    color: #E8F9FD;
-    border-color: #0F8DA9;
-    min-width: 250px;
-    min-height: 35px;
-    @media ${device.mobileL}{
-        width: 25%;
-        font-size: 20px;
-        margin: 2% 0%;
-    }
-`;
+
 
 const Login = () => {
     return (
@@ -67,7 +53,7 @@ const Login = () => {
                 <Label> Please log in to continue </Label>
                 <EmailInput name='email' label= "Email" />
                 <PasswordInput name='password' label= "Password"/>
-                <Button type='submit'> SIGN IN </Button>
+                <PrimaryButton type='submit'> SIGN IN </PrimaryButton>
             </Container>
         </Form>
     </Formik>
