@@ -24,13 +24,17 @@ const Container = styled.div`
 
 const Welcome = styled.div`
     font-size: 32px;
+    margin-bottom: 20%;
+    @media ${device.mobileL}{
+        margin-bottom:  5%;
+    }
 `;
 
 const Button = styled.button`
     width: 50%;
     border-radius: 25px;
     align-self: center;
-    margin-top: 2%;
+    margin: 5% 0%;
     background-color: #7CDEF4;
     color: #E8F9FD;
     border-color: #0F8DA9;
@@ -39,6 +43,7 @@ const Button = styled.button`
     @media ${device.mobileL}{
         width: 25%;
         font-size: 20px;
+        margin: 2% 0%;
     }
 `;
 
@@ -59,13 +64,9 @@ const Login = () => {
         <Form>
             <Container>
                 <Welcome>Welcome!</Welcome>
-                <br />
                 <Label> Please log in to continue </Label>
-                <br />
                 <EmailInput name='email' label= "Email" />
-                <br />
                 <PasswordInput name='password' label= "Password"/>
-                <br />
                 <Button type='submit'> SIGN IN </Button>
             </Container>
         </Form>
