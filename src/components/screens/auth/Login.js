@@ -31,8 +31,6 @@ const Welcome = styled.div`
     }
 `;
 
-
-
 const Login = () => {
     return (
     <Formik
