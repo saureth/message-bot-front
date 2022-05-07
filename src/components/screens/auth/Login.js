@@ -8,6 +8,10 @@ import Label from '../../shared/shared-comps/Label';
 import  * as Yup from 'yup';
 import PasswordInput from '../../shared/shared-comps/PasswordInput';
 import PrimaryButton from '../../shared/shared-comps/PrimaryButton';
+import {
+    useMutation
+} from "@apollo/client";
+import userMutations from '../../shared/gqls/mutations/userMutations';
 
 const Container = styled.div`
     display: flex;
@@ -32,10 +36,18 @@ const Welcome = styled.div`
 `;
 
 const Login = () => {
+    const [loginUser] = useMutation(userMutations.loginUser);
     return (
     <Formik
         initialValues={{ email: '', password: '',}}
-        onSubmit={values => console.log(values)}
+        onSubmit={values => { 
+            loginUser({ variables:{
+                loginInput: {
+                    email:values.email,
+                    password: values.password
+                }
+            }});
+        }}
         validationSchema={Yup.object({
             email: Yup.string()
                 .required('Obligatorio')

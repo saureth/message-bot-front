@@ -2,8 +2,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql
 } from "@apollo/client";
 
 import React from 'react';
@@ -19,27 +17,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-const BACKENDQ = gql`
-  query GetUsers {
-    getUsers {
-      id
-      fullname
-      email
-      pass
-      usertype
-    }
-  }
-`;
-
-const BackendQuery = () => {
-  const { loading, error, data } = useQuery(BACKENDQ);
-  console.log(loading, error, data);
-}
-
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <BackendQuery />
       <App />
     </ApolloProvider>
   </React.StrictMode>
